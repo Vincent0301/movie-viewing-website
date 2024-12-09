@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜘蛛侠</title>
+</head>
+<body>
+    <h1>蜘蛛侠</h1>
+    <img border="0" src="C:\Users\86136\Desktop\新建文件夹 (4)\spiderman.jpg" width="200" height="300"/>
+    <br>
+    <p>该片承接《蜘蛛侠：英雄远征》，讲述了蜘蛛侠的生活因曝光身份而陷入混乱，</p>
+    <p> 甚至遭到了全世界民众的愤怒抗议，为改变这一切，蜘蛛侠前往寻求奇异博士</p> 
+    <p>的帮助，没料想，多元宇宙打开后更大的危机也随之而来的故事</p>
+    <h2>评论</h2>
+    <ul>
+            <li>评分: 4-5</li>
+    </ul>
+    <form action="" method="post">
+        <label for="rating">评分:</label>
+        <input type="number" name="rating" min="1" max="5" required>
+        <br>
+        <label for="comment">评论:</label>
+        <textarea name="comment" required></textarea>
+        <br>
+        <button type="submit">提交评论</button>
+    </form>
+        <p>请先<a href="{{ url_for('login') }}">登录</a>来发表评论。</p>
+</body>
+</html>

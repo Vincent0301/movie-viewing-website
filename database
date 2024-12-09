@@ -1,0 +1,26 @@
+-- 创建用户表
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+-- 创建电影表
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    director TEXT,
+    year INTEGER,
+    description TEXT
+);
+
+-- 创建评论表
+CREATE TABLE reviews (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    movie_id INTEGER,
+    rating INTEGER CHECK(rating >= 1 AND rating <= 5),
+    comment TEXT,
+    FOREIGN KEY(user_id) REFERENCES users(id),
+    FOREIGN KEY(movie_id) REFERENCES movies(id)
+);

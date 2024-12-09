@@ -1,0 +1,12 @@
+movie_review_site/
+├── app.py               # 主应用文件
+├── templates/           # HTML 模板文件
+│   ├── index.html       # 首页
+│   ├── movie.html       # 电影详情页
+│   ├── login.html       # 登录页面
+│   └── register.html    # 注册页面
+├── static/              # 静态文件目录
+│   ├── css/
+│   └── js/
+└── database/
+    └── movies.db        # SQLite数据库

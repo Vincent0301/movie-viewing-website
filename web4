@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ movie['title'] }}</title>
+</head>
+<body>
+    <h1>{{ movie['title'] }}</h1>
+    <p>{{ movie['description'] }}</p>
+    <h2>评论</h2>
+    <ul>
+        {% for review in reviews %}
+            <li>评分: {{ review['rating'] }} - {{ review['comment'] }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if session['username'] %}
+    <form action="" method="post">
+        <label for="rating">评分:</label>
+        <input type="number" name="rating" min="1" max="5" required>
+        <br>
+        <label for="comment">评论:</label>
+        <textarea name="comment" required></textarea>
+        <br>
+        <button type="submit">提交评论</button>
+    </form>
+    {% else %}
+        <p>请先<a href="{{ url_for('login') }}">登录</a>来发表评论。</p>
+    {% endif %}
+</body>
+</html>
